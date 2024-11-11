@@ -1,0 +1,36 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ödev_2.MainPage">
+
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+
+       
+        <Frame WidthRequest="360" 
+               HeightRequest="360"
+               CornerRadius="180" 
+            Padding="5"
+            
+            BorderColor="DarkGray">
+            <Image Source="ben.jpg" 
+                   WidthRequest="350" 
+                   HeightRequest="350"
+                   Aspect="AspectFill" />
+        </Frame>
+
+       
+        <Label Text="Sezer Can Kılıç"
+               FontSize="24" 
+               HorizontalOptions="Center"
+               TextColor="DarkBlue"
+               FontAttributes="Bold"
+               Margin="0,0,0,10"/>
+
+       
+        <Label Text="ÖDEV-2"
+               FontSize="18" 
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="Gray" />
+
+    </VerticalStackLayout>
+</ContentPage>

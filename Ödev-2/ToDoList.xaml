@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ödev_2.ToDoList"
+             Background="#f0f8ff"
+             Title="Yapılacaklar Listesi">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="kalem.png" Text="Ekle" Clicked="OnAddTaskClicked" />
+    </ContentPage.ToolbarItems>
+    <VerticalStackLayout Padding="10">
+        <ListView x:Name="TasksListView" HasUnevenRows="true" ItemTapped="OnTaskTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BorderColor="#A9A9A9" Padding="10" CornerRadius="10" Margin="5" BackgroundColor="White">
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <CheckBox IsChecked="{Binding IsCompleted}" VerticalOptions="Center" Color="Red" />
+                                <Label Text="{Binding DisplayDescription}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontSize="16" TextColor="Black"/>
+                                <ImageButton Source="pencil.png" 
+                                             WidthRequest="25" HeightRequest="25"
+                                             Clicked="OnEditTaskClicked" 
+                                             CommandParameter="{Binding .}" />
+                                <ImageButton Source="cop.png" 
+                                             WidthRequest="25" HeightRequest="25"
+                                             Clicked="OnDeleteTaskClicked" 
+                                             CommandParameter="{Binding .}" />
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

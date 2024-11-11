@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ödev_2.VücutKitle"
+             Title="Vücut Kitle İndeksi Hesaplama">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30,50,30,30">
+
+            <Label Text="Kilo (kg)" FontSize="20"/>
+            <Entry x:Name="WeightEntry" Keyboard="Numeric" Placeholder="Kilo girin" />
+            <Slider x:Name="WeightSlider" Minimum="0" Maximum="400" Value="70" ThumbColor="Red" MinimumTrackColor="Red"/>
+            <Label x:Name="WeightLabel" Text="Kilo: 70 kg" FontSize="16"/>
+
+            <Label Text="Boy (cm)" FontSize="20"/>
+            <Entry x:Name="HeightEntry" Keyboard="Numeric" Placeholder="Boyu girin" />
+            <Slider x:Name="HeightSlider" Minimum="0" Maximum="300" Value="175" ThumbColor="Red" MinimumTrackColor="Red"/>
+            <Label x:Name="HeightLabel" Text="Boy: 175 cm" FontSize="16"/>
+
+            <Button Text="Hesapla" FontSize="20" Clicked="OnCalculateClicked" BackgroundColor="Red"/>
+
+            <Label x:Name="ResultLabel" Text="VKI Sonucu: " FontSize="18" HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,86 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ödev_2.KrediHesaplama"
+             Title="Kredi Hesaplama"
+             BackgroundColor="White">
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <!-- Kredi Türü Picker -->
+            <Picker x:Name="KrediTuruPicker"
+                    Title="Kredi Türünü Seçin"
+                    SelectedIndexChanged="OnKrediTuruChanged"
+                    Margin="0,10">
+                <Picker.Items>
+                    <x:String>İhtiyaç Kredisi</x:String>
+                    <x:String>Konut Kredisi</x:String>
+                    <x:String>Taşıt Kredisi</x:String>
+                    <x:String>Ticari Kredi</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Kredi Tutarı Entry -->
+            <Entry x:Name="KrediTutariEntry"
+                   Placeholder="Kredi Tutarı (TL)"
+                   Keyboard="Numeric"
+                   HorizontalOptions="FillAndExpand"
+                   Margin="0,10"/>
+
+            <!-- Faiz Oranı Entry -->
+            <Entry x:Name="FaizOraniEntry"
+                   Placeholder="Faiz Oranı (%)"
+                   Keyboard="Numeric"
+                   HorizontalOptions="FillAndExpand"
+                   Margin="0,10"/>
+
+            <!-- Vade Entry ve Slider -->
+            <Entry x:Name="VadeEntry"
+                   Placeholder="Vade (Ay)"
+                   Keyboard="Numeric"
+                   HorizontalOptions="FillAndExpand"
+                   Margin="0,10"
+                   TextChanged="OnVadeEntryTextChanged"/>
+
+            <Slider x:Name="VadeSlider"
+                    Minimum="1"
+                    Maximum="36"
+                    Value="12"
+                    ThumbColor="White"
+                    MinimumTrackColor="Green"
+                    MaximumTrackColor="Gray"
+                    ValueChanged="OnVadeSliderChanged" />
+
+            <!-- Hesaplama Sonuçları -->
+            <StackLayout Margin="0,20,0,20">
+                <Label Text="Aylık Taksit:"
+                       FontSize="16"
+                       TextColor="Black"/>
+                <Label x:Name="AylikTaksitLabel"
+                       FontSize="16"
+                       TextColor="Black"/>
+
+                <Label Text="Toplam Ödeme:"
+                       FontSize="16"
+                       TextColor="Black"/>
+                <Label x:Name="ToplamOdemeLabel"
+                       FontSize="16"
+                       TextColor="Black"/>
+
+                <Label Text="Toplam Faiz:"
+                       FontSize="16"
+                       TextColor="Black"/>
+                <Label x:Name="ToplamFaizLabel"
+                       FontSize="16"
+                       TextColor="Black"/>
+            </StackLayout>
+
+            <!-- Hesapla Butonu -->
+            <Button Text="Hesapla"
+                    BackgroundColor="Green"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="8"
+                    Clicked="OnHesaplaClicked"
+                    HorizontalOptions="FillAndExpand"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

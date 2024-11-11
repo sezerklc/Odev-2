@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Ödev_2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Ödev_2"
+    Shell.FlyoutBehavior="Flyout"
+    Title="Ödev_2">
+
+    <ShellContent
+        Title="Ana Sayfa"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    
+    <ShellContent
+        Title="Kredi Hesaplama"
+        ContentTemplate="{DataTemplate local:KrediHesaplama}"
+        Route="KrediHesaplama" />
+    
+    <ShellContent
+        Title="Vücut Kitle İndeksi Hesaplama"
+        ContentTemplate="{DataTemplate local:VücutKitle}"
+        Route="VücutKitle" />
+    
+    <ShellContent
+        Title="Renk Seçici"
+        ContentTemplate="{DataTemplate local:RenkSecici}"
+        Route="RenkSecici" />
+        
+    <ShellContent
+        Title="Yapılacaklar Listesi"
+        ContentTemplate="{DataTemplate local:ToDoList}"
+        Route="ToDoList" />
+        
+</Shell>
